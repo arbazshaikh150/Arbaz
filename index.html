@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            font-family: sans-serif;
+        }
+        /* body{
+            /* display: flex;
+            justify-content: center;
+            align-items: center;
+             */
+        
+        #image{
+            position: absolute;
+            top: 0px;
+            bottom : 0px;
+            border-radius:10px;
+            transition:0.2s;
+        }
+    </style>
+    <title>Move the images! </title>
+</head>
+<body>
+    <img src="./PicsArt_02-18-08.46.03.jpg" alt="" height="150px" width="100px" id="image">
+    <script>
+        let x = 0;
+        let y = 0;
+        let count = 10;
+        // DOM 
+        document.addEventListener("keydown",(e) => {
+            let variable = document.getElementById("image");
+            if(e.key == "ArrowDown"){
+
+                // console.log(e.key);
+                y += count;
+                 variable.style.top = y + "px";
+                 variable.style.transitionTimingFunction = "ease";
+                //  variable.style.transition = "position 10s";  
+                // count += 10;           
+            }
+            if(e.key == "ArrowUp"){
+                 y -= count;
+                //  console.log(e.key);
+                
+                 variable.style.top = y + "px";
+                 variable.style.transitionTimingFunction = "ease";
+                //  variable.style.transition = "position 10s";             
+            }
+            if(e.key == "ArrowLeft"){
+                x -= count;
+                // console.log(e.key);
+                
+                 variable.style.left = x + "px";
+                 variable.style.transitionTimingFunction = "ease";
+                //  variable.style.transition = "position 10s";           
+                // count += 10;
+            }
+            if(e.key == "ArrowRight"){
+                x += count;
+                // console.log(e.key);
+                
+                 variable.style.left = x + "px";
+                 variable.style.transitionTimingFunction = "ease";
+                //  variable.style.transition = "position 10s";    
+                // count += 10;         
+            }
+            console.log(x,y);
+
+        })
+
+    </script>
+    
+</body>
+</html>
